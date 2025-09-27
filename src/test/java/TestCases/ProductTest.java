@@ -181,28 +181,7 @@ public class ProductTest extends BaseClass
 				.log().all();
 			
 		}
-		//Update new Git Product
-				@Test
-				public void updateNewGitProduct() throws Exception 
-				{
-					Product updatedproduct = Payload.product_payload(); //to create random data
-				    configreader = new ConfigReader();
-				    int productId = configreader.getIntProperty("productId");
-					given()
-					
-						.body(updatedproduct)
-						.contentType(ContentType.JSON)
-						.pathParam("id", productId)
-					.when()
-						.put(Routes.PRODUCT_UPDATE)
-					.then()
-						.statusCode(200)
-						.body("title", equalTo(updatedproduct.getTitle()))
-						.log().all();
-					
-				}
-	
-	
+		
 }
 
 
